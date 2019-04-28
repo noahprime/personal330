@@ -11,7 +11,7 @@ public class JdbcDatabase{
   private final String preConnectionString = "jdbc:mysql://mysql.cs.wwu.edu:3306/";
   private final String postConnectionString = "?useSSl=false";
   private String connectionString;
-  //private ArrayList<Student> students = new ArrayList<Student>();
+  private ArrayList<Student> students = new ArrayList<Student>();
 
   public JdbcDatabase(String userID, String password){
     this.userID = userID;
@@ -28,8 +28,8 @@ public class JdbcDatabase{
 
         while(result.next()){
           System.out.println(result.getInt(1) + " " + result.getString(2));
-          //Student s = new Student(result.getInt(1), result.getString(2));
-          //this.student.add(s);
+          Student s = new Student(result.getInt(1), result.getString(2));
+          this.student.add(s);
         }
       }
     }catch(Exception e){
