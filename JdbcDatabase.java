@@ -24,7 +24,7 @@ public class JdbcDatabase{
       Connection connection = getConnection();
       if(connection != null){
         Statement query = connection.createStatement();
-        ResultSet result = query.executeQuere("SELECT * FROM student");
+        ResultSet result = query.executeQuery("SELECT * FROM student");
 
         while(result.next()){
           System.out.println(result.getInt(1) + " " + result.getString(2));
