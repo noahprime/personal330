@@ -29,7 +29,7 @@ public class JdbcDatabase{
         while(result.next()){
           System.out.println(result.getInt(1) + " " + result.getString(2));
           Student s = new Student(result.getInt(1), result.getString(2));
-          this.student.add(s);
+          this.students.add(s);
         }
       }
     }catch(Exception e){
